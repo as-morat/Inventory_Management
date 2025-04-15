@@ -1,7 +1,7 @@
 # Default ignored files
-/build/
+build/
 .idea/
-.out/
+out/
 test/
 build.xml/
 manifest.mf/
@@ -9,3 +9,12 @@ manifest.mf/
 
 /shelf/
 /.idea/workspace.xml
+# Ignore manifest.mf
+manifest.mf
+
+# Ignore build.xml
+build.xml
+
+# Ignore inventory_management.iml
+Inventory_Management.iml
+
