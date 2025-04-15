@@ -1,20 +1,12 @@
-# Default ignored files
-build/
-.idea/
-out/
-test/
-build.xml/
-manifest.mf/
-.iml/
+# Ignore all files by default
+/*
 
-/shelf/
-/.idea/workspace.xml
-# Ignore manifest.mf
-manifest.mf
+# Track specific directories
+!/src/
+!/lib/
+!/nbproject/
 
-# Ignore build.xml
+# Ignore specific files in the root
+manifest.xml
 build.xml
-
-# Ignore inventory_management.iml
-Inventory_Management.iml
-
+inventory_management.xml
