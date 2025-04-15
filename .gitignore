@@ -1,0 +1,11 @@
+# Default ignored files
+/build/
+.idea/
+.out/
+test/
+build.xml/
+manifest.mf/
+.iml/
+
+/shelf/
+/.idea/workspace.xml
