@@ -3,12 +3,8 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/Java%20Project/Inventory_Management/src/ManageUser.java</file>
-            <file>file:/D:/Java%20Project/Inventory_Management/src/Log_In.java</file>
-            <file>file:/D:/Java%20Project/Inventory_Management/src/HomePage.java</file>
-            <file>file:/D:/Java%20Project/Inventory_Management/src/Main.java</file>
-            <file>file:/D:/Java%20Project/Inventory_Management/src/Register.java</file>
-            <file>file:/D:/Java%20Project/Inventory_Management/src/Home.java</file>
+            <file>file:/D:/Java%20Project/Inventory_Management/src/User_manage/UserManage.java</file>
+            <file>file:/D:/Java%20Project/Inventory_Management/src/Home_Page/HomePage.java</file>
         </group>
     </open-files>
 </project-private>
