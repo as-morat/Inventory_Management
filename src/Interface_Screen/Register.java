@@ -1,8 +1,5 @@
 package Interface_Screen;
 
-
-
-
 import Inventory_Main.Main;
 import javax.swing.JOptionPane;
 import db.Connection_Provider;

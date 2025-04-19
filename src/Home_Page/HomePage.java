@@ -251,14 +251,32 @@ public class HomePage extends javax.swing.JFrame {
 
     private void customerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_customerActionPerformed
         setActiveButton(customer, home, category, product, order, view, user, logout);
+        JOptionPane.showMessageDialog(
+            null, 
+            "Customer module is currently under maintenance.\nWe apologize for the inconvenience.\nPlease check back soon.", 
+            "Maintenance Notification", 
+            JOptionPane.INFORMATION_MESSAGE
+        );
     }//GEN-LAST:event_customerActionPerformed
 
     private void orderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_orderActionPerformed
         setActiveButton(order, customer, home, category, product, view, user, logout);
+        JOptionPane.showMessageDialog(
+            null, 
+            "Customer module is currently under maintenance.\nWe apologize for the inconvenience.\nPlease check back soon.", 
+            "Maintenance Notification", 
+            JOptionPane.INFORMATION_MESSAGE
+        );
     }//GEN-LAST:event_orderActionPerformed
 
     private void viewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewActionPerformed
         setActiveButton(view, order, customer, home, category, product, user, logout);
+        JOptionPane.showMessageDialog(
+            null, 
+            "Customer module is currently under maintenance.\nWe apologize for the inconvenience.\nPlease check back soon.", 
+            "Maintenance Notification", 
+            JOptionPane.INFORMATION_MESSAGE
+        );
     }//GEN-LAST:event_viewActionPerformed
 
     private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
