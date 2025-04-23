@@ -1,6 +1,9 @@
 package Home_Page;
 
+import Category.CategoryManage;
+import Customer.Customer;
 import Inventory_Main.Main;
+import Product.ManageProduct;
 import User_manage.UserManage;
 import com.formdev.flatlaf.FlatLightLaf;
 import java.awt.CardLayout;
@@ -28,6 +31,17 @@ public class HomePage extends javax.swing.JFrame {
         }
         ((CardLayout) homie.getLayout()).show(homie, "user");
     }
+    
+    public final void setCategory() {
+    CategoryManage c = new CategoryManage();
+    homie.add(c, "category");
+    ((CardLayout) homie.getLayout()).show(homie, "category");
+}
+    public final void setCustomer() {
+    Customer c = new Customer();
+    homie.add(c, "customer");
+    ((CardLayout) homie.getLayout()).show(homie, "customer");
+}
 
     private void initialize(String role) {
         initComponents();
@@ -243,20 +257,18 @@ public class HomePage extends javax.swing.JFrame {
 
     private void categoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_categoryActionPerformed
         setActiveButton(category, home, customer, logout, order, view, product);
+    setCategory();
     }//GEN-LAST:event_categoryActionPerformed
 
     private void productActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_productActionPerformed
-        setActiveButton(product, category, home, customer, logout, order, view);
+    setActiveButton(product, category, home, customer, logout, order, view);
+    ManageProduct manageProduct = new ManageProduct();
+    manageProduct.setVisible(true);
     }//GEN-LAST:event_productActionPerformed
 
     private void customerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_customerActionPerformed
         setActiveButton(customer, home, category, product, order, view, user, logout);
-        JOptionPane.showMessageDialog(
-            null, 
-            "Customer module is currently under maintenance.\nWe apologize for the inconvenience.\nPlease check back soon.", 
-            "Maintenance Notification", 
-            JOptionPane.INFORMATION_MESSAGE
-        );
+        setCustomer();
     }//GEN-LAST:event_customerActionPerformed
 
     private void orderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_orderActionPerformed
@@ -321,4 +333,5 @@ public class HomePage extends javax.swing.JFrame {
             btn.setBackground(new Color(214, 255, 132));
         }
     }
+
 }
