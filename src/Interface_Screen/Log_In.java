@@ -169,7 +169,7 @@ public Log_In(Main main) {
     private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 
-    private void loginAction() {
+  private void loginAction() {
     String email = jTextField1.getText().trim();
     char[] passwordChars = jPasswordField1.getPassword();
     String password = new String(passwordChars).trim();
@@ -189,16 +189,25 @@ public Log_In(Main main) {
         return;
     }
 
-    // Note: This is still vulnerable to SQL injection - see warning below
-    String query = String.format("SELECT * FROM appuser WHERE email = '%s' AND password = '%s'", 
-                               email.replace("'", "''"), 
-                               password.replace("'", "''"));
-
     try {
-        ResultSet rs = Connection_Provider.execute(query);
+        // Use prepared statement to prevent SQL injection
+        Connection con = Connection_Provider.getCon();
+        if (con == null) {
+            JOptionPane.showMessageDialog(this, "Database connection failed.");
+            return;
+        }
+        
+        // Using parameterized query
+        String query = "SELECT * FROM admin WHERE email = ? AND password = ?";
+        PreparedStatement ps = con.prepareStatement(query);
+        ps.setString(1, email);
+        ps.setString(2, password);
+        
+        ResultSet rs = ps.executeQuery();
         
         if (rs != null && rs.next()) {
-            String role = rs.getString("userRole");
+            // Changed to match the column name in your admin table (user_role)
+            String role = rs.getString("user_role");
             JOptionPane.showMessageDialog(this, "Login successful!", "Success", JOptionPane.INFORMATION_MESSAGE);
             java.awt.Window window = javax.swing.SwingUtilities.getWindowAncestor(this);
             if (window != null) {
@@ -206,14 +215,18 @@ public Log_In(Main main) {
             }
             new HomePage(role).setVisible(true);
         } else {
-            JOptionPane.showMessageDialog(this, "Invalid email or password.", "Login Failed", JOptionPane.ERROR_MESSAGE);resetInput();
+            JOptionPane.showMessageDialog(this, "Invalid email or password.", "Login Failed", JOptionPane.ERROR_MESSAGE);
+            resetInput();
         }
         
-        if (rs != null) {
-            rs.close();
-        }
+        // Close resources
+        if (rs != null) rs.close();
+        if (ps != null) ps.close();
+        if (con != null) con.close();
+        
     } catch (SQLException e) {
         JOptionPane.showMessageDialog(this, "Database error: " + e.getMessage());
+        e.printStackTrace(); // Add this for debugging
     }
 }
 

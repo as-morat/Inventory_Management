@@ -294,7 +294,7 @@ public Register(Main main) {
     private void jPasswordField1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jPasswordField1FocusGained
         if (String.valueOf(jPasswordField1.getPassword()).equals("Password")) {
                     jPasswordField1.setText("");
-                    jPasswordField1.setEchoChar('•');
+                    jPasswordField1.setEchoChar('*');
                 }
     }//GEN-LAST:event_jPasswordField1FocusGained
 
@@ -370,7 +370,7 @@ public Register(Main main) {
             int rows = ps.executeUpdate();
             if (rows > 0) {
                 JOptionPane.showMessageDialog(this, "Registration successful.");
-                //main.setLog_In();
+                main.setLog_In();
             } else {
                 JOptionPane.showMessageDialog(this, "Registration failed.");
             }

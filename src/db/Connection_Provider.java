@@ -7,7 +7,7 @@ public class Connection_Provider {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection con = DriverManager.getConnection(
-                "jdbc:mysql://localhost:3306/inventory?useSSL=false", 
+                "jdbc:mysql://localhost:3306/inventory", 
                 "root", 
                 "A!s#H46@9r7A2f0A$t"
             );
